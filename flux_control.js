@@ -1,10 +1,8 @@
 const number1 = 100;
 const number2 = 20;
 
-if (true) {
-  console.log("Always appears");
-}
-
-if (false) {
-  console.log("Never appears");
-}
+// Any true will outputs true
+console.log(true || true);
+console.log(true || false);
+console.log(false || true);
+console.log(false || false);
