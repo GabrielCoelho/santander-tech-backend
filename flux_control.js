@@ -1,4 +1,4 @@
-const number1 = 100;
+const number1 = 300;
 const number2 = 20;
 
 if (number1 > 1) {
