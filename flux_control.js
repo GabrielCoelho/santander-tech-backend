@@ -1,2 +1,5 @@
-console.log(!![], !!{}, !!1, !!"asoteu");
-console.log(!!null, !!undefined, !!0, !!"", !!NaN);
+const language = "pt-br";
+const world = "Hello World";
+const mundo = "Olá Mundo";
+
+console.log(language === "pt-br" ? mundo : world);
