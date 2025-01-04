@@ -1,6 +1,6 @@
-const names = ["Joana", "Emily", "Clovis", "Gerald"];
+const names = ["Joana", "Emily", "Clovis", "Gerald", "Noemy"];
 
-const numberOfNames = 4;
+const numberOfNames = names.length;
 let rounds = 0;
 
 while (rounds < numberOfNames) {
