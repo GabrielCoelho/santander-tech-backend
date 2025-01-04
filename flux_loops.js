@@ -1,9 +1,8 @@
 const names = ["Joana", "Emily", "Clovis", "Gerald", "Noemy"];
 
-const numberOfNames = names.length;
 let rounds = 0;
 
-while (rounds < numberOfNames) {
+while (rounds < names.length) {
   console.log("Olá ", names[rounds]);
   rounds += 1;
 }
