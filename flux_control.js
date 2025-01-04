@@ -1,8 +1,6 @@
 const number1 = 100;
 const number2 = 20;
 
-if (number1 > 200) {
-  console.log("This number is greater than 200");
-} else {
-  console.log("This number is lower than 200");
+if (number2 < number1) {
+  console.log(`${number2} is lower than ${number1}`);
 }
