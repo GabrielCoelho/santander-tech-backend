@@ -23,7 +23,11 @@ const server = http.createServer(async (request, response) => {
     if (method === "POST") {
       const body = await bodyPromise;
       const { name } = body;
-      sports.push(name);
+      if (
+        !sports.map((sport) => sport.toLowerCase()).includes(name.toLowerCase())
+      ) {
+        sports.push(name.toLowerCase());
+      }
     }
     response.write(JSON.stringify(sports));
     response.end();
