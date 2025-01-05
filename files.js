@@ -8,5 +8,10 @@ fs.readFile(filePath, {}, (err, data) => {
     console.log(`Error trying to read file: ${filePath}`);
     return;
   }
-  console.log(data.toString());
+  const text = data.toString();
+  const lines = text.split("\n");
+
+  lines.forEach((line, index, linesArray) =>
+    console.log(`${index} - ${line} - ${linesArray}`),
+  );
 });
