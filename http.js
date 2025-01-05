@@ -1,18 +1,30 @@
 const http = require("node:http");
 
-const server = http.createServer((request, response) => {
+const server = http.createServer(async (request, response) => {
   const { method, statusCode, url } = request;
 
   const sports = ["soccer", "volley", "tennis", "basketball"];
+  const bodyPromise = new Promise((resolve, reject) => {
+    let body;
+    request.on("data", (data) => {
+      body = JSON.parse(data);
+    });
+
+    request.on("end", (data) => {
+      resolve(body);
+    });
+  });
 
   if (url === "/") {
     response.write("<h1>Hello from node</h1>");
     response.end();
   }
   if (url === "/api/sports") {
-    //for (const el of sports) {
-    //  response.write(`<p>${el}</p>`);
-    //}
+    if (method === "POST") {
+      const body = await bodyPromise;
+      const { name } = body;
+      sports.push(name);
+    }
     response.write(JSON.stringify(sports));
     response.end();
   } else {
