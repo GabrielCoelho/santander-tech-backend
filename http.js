@@ -3,23 +3,23 @@ const http = require("node:http");
 const server = http.createServer((request, response) => {
   const { method, statusCode, url } = request;
 
-  const sports = ["soccer", "volley", "tennis"];
+  const sports = ["soccer", "volley", "tennis", "basketball"];
 
   if (url === "/") {
     response.write("<h1>Hello from node</h1>");
     response.end();
   }
-
-  if (url === "/sports") {
-    for (const el of sports) {
-      response.write(`<p>${el}</p>`);
-    }
+  if (url === "/api/sports") {
+    //for (const el of sports) {
+    //  response.write(`<p>${el}</p>`);
+    //}
+    response.write(JSON.stringify(sports));
+    response.end();
+  } else {
+    response.statusCode = 404;
+    response.write("<h1>Page not found</h1>");
     response.end();
   }
-
-  response.statusCode = 404;
-  response.write("<h1>Page not found</h1>");
-  response.end();
 });
 
 server.listen(5173, "localhost", () => {
