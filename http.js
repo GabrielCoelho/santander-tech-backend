@@ -1,9 +1,9 @@
 const http = require("node:http");
 
+const sports = ["soccer", "volley", "tennis", "basketball"];
 const server = http.createServer(async (request, response) => {
   const { method, statusCode, url } = request;
 
-  const sports = ["soccer", "volley", "tennis", "basketball"];
   const bodyPromise = new Promise((resolve, reject) => {
     let body;
     request.on("data", (data) => {
