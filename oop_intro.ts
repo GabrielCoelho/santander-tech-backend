@@ -7,7 +7,8 @@ class WorkPlace {
   private address: string;
   private type: string;
   private products: Product[];
-  constructor(address, type, products) {
+
+  constructor(address: string, type: string, products: Product[]) {
     this.address = address;
     this.type = type;
     this.products = products;
