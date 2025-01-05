@@ -1,11 +1,12 @@
+type Product = {
+  name: string;
+  price: number;
+};
+
 class WorkPlace {
   private address: string;
   private type: string;
-  private products: {
-    name: string;
-    price: number;
-  };
-
+  private products: Product[];
   constructor(address, type, products) {
     this.address = address;
     this.type = type;
