@@ -12,6 +12,6 @@ fs.readFile(filePath, {}, (err, data) => {
   const lines = text.split("\n");
 
   lines.forEach((line, index, linesArray) =>
-    console.log(`${index} - ${line} - ${linesArray}`),
+    console.error(`${index} - ${line} - ${linesArray}`),
   );
 });
