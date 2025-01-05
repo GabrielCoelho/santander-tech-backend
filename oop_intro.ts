@@ -9,6 +9,10 @@ class WorkPlace {
     private ramal: string,
     private products: Products[],
   ) {}
+
+  returnProductName() {
+    return this.products.map((product) => product.name);
+  }
 }
 
 //const bakery = {
@@ -40,3 +44,4 @@ const bakeryOfOranges = new WorkPlace(
 );
 
 console.log(bakeryOfOranges);
+console.log(bakeryOfOranges.returnProductName());
