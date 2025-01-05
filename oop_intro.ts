@@ -4,6 +4,7 @@ type Products = {
 };
 
 class WorkPlace {
+  private awaintingList = 10;
   constructor(
     private address: string,
     private ramal: string,
@@ -12,6 +13,14 @@ class WorkPlace {
 
   returnProductName() {
     return this.products.map((product) => product.name);
+  }
+
+  attendList() {
+    this.awaintingList -= 1;
+  }
+
+  showHowManyAreInAwaitList() {
+    return this.awaintingList;
   }
 }
 
@@ -45,3 +54,8 @@ const bakeryOfOranges = new WorkPlace(
 
 console.log(bakeryOfOranges);
 console.log(bakeryOfOranges.returnProductName());
+bakeryOfOranges.attendList();
+bakeryOfOranges.attendList();
+bakeryOfOranges.attendList();
+bakeryOfOranges.attendList();
+console.log(bakeryOfOranges.showHowManyAreInAwaitList());
