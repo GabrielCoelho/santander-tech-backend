@@ -4,23 +4,31 @@ type Products = {
 };
 
 class WorkPlace {
-  private awaintingList = 10;
+  private waitingList: number;
   constructor(
     private address: string,
     private ramal: string,
     private products: Products[],
-  ) {}
+    waitingList?: number,
+  ) {
+    this.waitingList = waitingList ?? 0;
+  }
 
   returnProductName() {
     return this.products.map((product) => product.name);
   }
 
   attendList() {
-    this.awaintingList -= 1;
+    if (this.waitingList === 0) {
+      console.log("The line is empty");
+      return;
+    }
+
+    this.waitingList -= 1;
   }
 
   showHowManyAreInAwaitList() {
-    return this.awaintingList;
+    return this.waitingList;
   }
 }
 
@@ -50,6 +58,7 @@ const bakeryOfOranges = new WorkPlace(
     { name: "Milk", price: 5.25 },
     { name: "Candies", price: 0.15 },
   ],
+  10,
 );
 
 console.log(bakeryOfOranges);
