@@ -4,15 +4,11 @@ type Products = {
 };
 
 class WorkPlace {
-  private address: string;
-  private ramal: string;
-  private products: Products[];
-
-  constructor(address: string, type: string, products: Products[]) {
-    this.address = address;
-    this.ramal = type;
-    this.products = products;
-  }
+  constructor(
+    private address: string,
+    private ramal: string,
+    private products: Products[],
+  ) {}
 }
 
 //const bakery = {
