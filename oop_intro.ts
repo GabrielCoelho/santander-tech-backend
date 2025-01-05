@@ -1,3 +1,18 @@
+class WorkPlace {
+  private address: string;
+  private type: string;
+  private products: {
+    name: string;
+    price: number;
+  };
+
+  constructor(address, type, products) {
+    this.address = address;
+    this.type = type;
+    this.products = products;
+  }
+}
+
 const bakery = {
   address: "Avenue of Oranges, 1320 - Block D",
   type: "food",
