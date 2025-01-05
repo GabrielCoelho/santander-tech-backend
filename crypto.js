@@ -6,3 +6,10 @@ console.log(key);
 
 const uuid = crypt.randomUUID();
 console.log(uuid);
+
+const { privateKey, publicKey } = crypt.generateKeyPairSync("rsa-pss", {
+  modulusLength: 2048,
+});
+
+console.log(privateKey);
+console.log(publicKey);
